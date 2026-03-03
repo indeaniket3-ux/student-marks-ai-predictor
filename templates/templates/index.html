@@ -1,24 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Marks AI Predictor</title>
+    <meta charset="UTF-8">
+    <title>AI Marks Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #6c63ff;
+            outline: none;
+            box-shadow: 0 0 8px #6c63ff;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #6c63ff, #3f3d56);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #6c63ff;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <h1>🎯 Student Marks AI Predictor</h1>
 
-    <form method="POST">
-        <label>Hours Studied:</label><br>
-        <input type="number" step="0.1" name="study" required><br><br>
+    <div class="card">
+        <h1>🎯 AI Marks Predictor</h1>
 
-        <label>Hours Slept:</label><br>
-        <input type="number" step="0.1" name="sleep" required><br><br>
+        <form method="POST">
+            <input type="number" step="0.1" name="study" placeholder="📚 Hours Studied" required>
+            <input type="number" step="0.1" name="sleep" placeholder="😴 Hours Slept" required>
+            <button type="submit">🚀 Predict Now</button>
+        </form>
 
-        <button type="submit">Predict</button>
-    </form>
+        
 
-    {% if prediction %}
-        <h2>📊 Predicted Marks: {{ prediction }}</h2>
-    {% endif %}
+        <footer>
+            Built by Aniket | Future AI Engineer 🚀
+        </footer>
+    </div>
+
 </body>
-</html>.
+</html>
 
